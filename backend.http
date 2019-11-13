@@ -1,0 +1,81 @@
+GET https://users-dasw.herokuapp.com/api/tokenDASW
+x-expediente: 715468
+
+
+
+
+GET https://users-dasw.herokuapp.com/api/tokenDASW
+x-expediente: EXPEDIENTE-SOLO-NUMEROS
+
+###
+POST  https://users-dasw.herokuapp.com/api/login
+Content-Type: application/json
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzE1NDY4IiwiaWF0IjoxNTczNTkwODAyfQ.X1KvFARtU4FUmNeAQT9mmU86-zbLmyAv1JV8CMap_IE
+
+{
+    "correo":"is715480@iteso.mx",
+    "password":"1234"
+}
+
+### TAMBIÉN PUEDES BUSCAR ASI: ?nombre=L
+GET  https://users-dasw.herokuapp.com/api/users
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzE1NDY4IiwiaWF0IjoxNTczNjA3MjIxfQ.HnUGt3McBsGM-XFeXSLub77NsXLM60GSsZzJ8dgbs1E
+x-user-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzE1NDY4IiwiaWF0IjoxNTczNjA3MjIxfQ.HnUGt3McBsGM-XFeXSLub77NsXLM60GSsZzJ8dgbs1E
+
+
+
+
+
+
+
+### REGISTRAR UN USUARIO
+
+POST  https://users-dasw.herokuapp.com/api/users
+Content-Type: application/json
+x-auth: TOKEN-DE-USUARIO
+
+{
+    "nombre":"L",
+    "apellido":"G",
+    "correo":"t@t.com",
+    "url":"",
+    "sexo":"H",
+    "fecha":"10-10-2019",
+    "password":"12345"
+}
+
+### OBTENER USUARIO test2@t.com
+GET  https://users-dasw.herokuapp.com/api/users/test2@t.com
+Content-Type: application/json
+x-auth: TOKEN-DE-ALUMNO
+x-user-token: TOKEN-DE-USUARIO
+
+### ACTUALIZAR USUARIO t@t.com
+PUT  https://users-dasw.herokuapp.com/api/users/t@t.com
+Content-Type: application/json
+x-auth: TOKEN-DE-ALUMNO
+x-user-token: TOKEN-DE-USUARIO
+
+{
+    "nombre":"L2",
+    "apellido":"G2",
+    "correo":"t@t.com",
+    "url": "https://randomuser.me/api/portraits/men/8.jpg",
+    "sexo":"H",
+    "fecha":"10-10-2012",
+    "password":"123456"
+}
+
+### BORRAR AL USUARIO test2@test.com
+
+DELETE  https://users-dasw.herokuapp.com/api/users/test2@test.com
+Content-Type: application/json
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzE1NDY4IiwiaWF0IjoxNTczNDMwMjUzfQ.EGJbwjU7I3Zfy-6h5lt53CNkrYn3S8CPOy2N868XZIo
+x-user-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzE1NDY4IiwiY29ycmVvIjoiaXM3MTU0NjhAaXRlc28ubXgiLCJpaWQiOjAsImlhdCI6MTU3MzQzNjQyNywiZXhwIjoxNTczNDQwMDI3fQ.ZlnOuWUcb7mRJ5WhxQZU_F_ZVcdl0YhNNES1eD8SByA
+
+
+### OBTENER USUARIOS
+GET  https://users-dasw.herokuapp.com/api/users
+Content-Type: application/json
+x-auth: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzE1NDY4IiwiaWF0IjoxNTczNTg0MzQzfQ.57Eb-AYAfy4vGwzFcfuiGjiWSW1s-CYfl-lhve0Ktyw
+x-user-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBlZGllbnRlIjoiNzE1NDY4IiwiY29ycmVvIjoiaXM3MTU0ODBAaXRlc28ubXgiLCJpaWQiOjQsImlhdCI6MTU3MzU4NDM3NywiZXhwIjoxNTczNTg3OTc3fQ.vh16V6LexwICd6cNCZ1PoI_v2GbU2epPq4GvUJoRYbo
